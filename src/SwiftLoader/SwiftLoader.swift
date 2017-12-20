@@ -55,6 +55,12 @@ public class SwiftLoader: UIView {
         return Singleton.instance
     }
     
+    public class var isVisible: Bool {
+        get {
+            return SwiftLoader.sharedInstance.loadingView?.isSpinning ?? false
+        }
+    }
+    
     public class func show(animated: Bool) {
         self.show(title: nil, animated: animated)
     }
@@ -201,7 +207,7 @@ public class SwiftLoader: UIView {
         private var lineWidth : Float?
         private var lineTintColor : UIColor?
         private var backgroundLayer : CAShapeLayer?
-        private var isSpinning : Bool?
+        private public(set) var isSpinning : Bool?
         
         var config : Config = Config() {
             didSet {
