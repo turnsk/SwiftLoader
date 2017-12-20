@@ -207,7 +207,7 @@ public class SwiftLoader: UIView {
         private var lineWidth : Float?
         private var lineTintColor : UIColor?
         private var backgroundLayer : CAShapeLayer?
-        private public(set) var isSpinning : Bool?
+        public private(set) var isSpinning : Bool?
         
         var config : Config = Config() {
             didSet {
